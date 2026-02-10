@@ -20,14 +20,14 @@
     body { @apply size-full; }
     /*Navigation Bar Style*/
     nav {
-        @apply h-20 flex gap-y-12 justify-between lg:justify-around items-center p-4
+        @apply relative h-20 flex gap-y-12 justify-between lg:justify-around items-center p-4
         bg-linear-180 from-90% from-white to-neutral-200;
 
         /*Heading with menu button*/
         header {
             @apply h-full inline-flex items-center justify-center;
             #menu-button {
-                @apply p-2 lg:hidden font-bold rounded-lg
+                @apply z-1 p-2 lg:hidden font-bold rounded-lg
                 shadow-lg shadow-deep-forest-500/30
                 hover:bg-deep-forest-300;
                 svg {
@@ -44,7 +44,10 @@
             @apply transition ease-linear duration-200
             cursor-pointer;
         }
-
+        /* Active navigation drop down */
+        .show {
+            @apply absolute bg-neutral-500 left-4 right-4;
+        }
         /*Navigation button container*/
         div {
             @apply items-center lg:inline-flex lg:gap-8;
