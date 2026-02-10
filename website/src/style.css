@@ -1,1 +1,68 @@
 @import "tailwindcss";
+
+@theme {
+    --shadow-lg: 1px 3px 24px 0px;
+
+    --color-deep-forest-50: oklch(98.2% 0.014 155.6);
+    --color-deep-forest-100: oklch(95.5% 0.030 159.1);
+    --color-deep-forest-200: oklch(90.5% 0.053 160.6);
+    --color-deep-forest-300: oklch(83.7% 0.088 162.0);
+    --color-deep-forest-400: oklch(75.0% 0.118 162.8);
+    --color-deep-forest-500: oklch(65.7% 0.121 163.2);
+    --color-deep-forest-600: oklch(55.9% 0.104 163.6);
+    --color-deep-forest-700: oklch(47.8% 0.085 164.9);
+    --color-deep-forest-800: oklch(41.1% 0.067 167.2);
+    --color-deep-forest-900: oklch(36.2% 0.056 168.4);
+    --color-deep-forest-950: oklch(25.3% 0.036 170.8);
+}
+
+@layer base {
+    body { @apply size-full; }
+    /*Navigation Bar Style*/
+    nav {
+        @apply h-20 flex gap-y-12 justify-between lg:justify-around items-center p-4
+        bg-linear-180 from-90% from-white to-neutral-200;
+
+        /*Heading with menu button*/
+        header {
+            @apply h-full inline-flex items-center justify-center;
+            #menu-button {
+                @apply p-2 lg:hidden font-bold rounded-lg
+                shadow-lg shadow-deep-forest-500/30
+                hover:bg-deep-forest-300;
+                svg {
+                    @apply size-6;
+                }
+            }
+            h1 {
+                @apply font-bold text-2xl pb-0.5 mx-6 lg:mx-0 text-nowrap;
+            }
+        }
+
+        /*Transition*/
+        #donate-button, li button, #menu-button, header h1 {
+            @apply transition ease-linear duration-200
+            cursor-pointer;
+        }
+
+        /*Navigation button container*/
+        div {
+            @apply items-center lg:inline-flex lg:gap-8;
+            ul {
+                @apply hidden lg:flex lg:divide-x-2 lg:divide-black lg:divide-solid;
+                li button {
+                    @apply px-4 cursor-pointer hover:text-deep-forest-700 hover:underline underline-offset-4;
+                }
+            }
+            #donate-button {
+                @apply hidden sm:block float-right bg-deep-forest-600 px-4 pt-1 pb-1.5 text-white rounded-lg
+                shadow-lg shadow-deep-forest-500/30 font-bold
+                hover:shadow-deep-forest-500/80 hover:bg-deep-forest-700;
+            }
+        }
+    }
+    section {
+        @apply h-256;
+    }
+}
+

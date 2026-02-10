@@ -14,7 +14,7 @@ export default defineConfig(({ command }) => {
 
     if (command === 'serve') {
         // In development, we want the site at the root (localhost:5173/)
-        config.base = '/'
+        config.base = '/website'
     } else {
         // In production (build), we need the repo name for GitHub Pages
         config.base = '/my-uni-project/'
