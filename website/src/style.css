@@ -3,6 +3,8 @@
 @theme {
     --shadow-lg: 1px 3px 24px 0px;
 
+    --breakpoint-xs: 32rem;
+
     --color-deep-forest-50: oklch(98.2% 0.014 155.6);
     --color-deep-forest-100: oklch(95.5% 0.030 159.1);
     --color-deep-forest-200: oklch(90.5% 0.053 160.6);
@@ -18,54 +20,57 @@
 
 @layer base {
     body { @apply size-full; }
-    /*Navigation Bar Style*/
+
+    /*Navigation Bar*/
     nav {
-        @apply relative h-20 flex gap-y-12 justify-between lg:justify-around items-center p-4
-        bg-linear-180 from-90% from-white to-neutral-200;
+        @apply relative h-fit flex flex-row gap-y-2 items-center p-4
+        bg-linear-180 from-90% from-white to-neutral-200
+        justify-between xl:justify-around lg:flex-col xl:flex-row;
 
         /*Heading with menu button*/
-        header {
-            @apply h-full inline-flex items-center justify-center;
-            #menu-button {
-                @apply z-1 p-2 lg:hidden font-bold rounded-lg
-                shadow-lg shadow-deep-forest-500/30
-                hover:bg-deep-forest-300;
-                svg {
-                    @apply size-6;
-                }
-            }
-            h1 {
-                @apply font-bold text-2xl pb-0.5 mx-6 lg:mx-0 text-nowrap;
-            }
+        h1 {
+            @apply font-bold text-2xl pb-0.5 text-nowrap
+            hover:underline hover:underline-offset-4
+            hover:text-deep-forest-700;
         }
 
         /*Transition*/
-        #donate-button, li button, #menu-button, header h1 {
-            @apply transition ease-linear duration-200
+        #membership-button, li, #menu-button, h1 {
+            @apply transition ease-linear duration-100
             cursor-pointer;
         }
         /* Active navigation drop down */
         .show {
-            @apply absolute bg-neutral-500 left-4 right-4;
+            @apply absolute;
         }
         /*Navigation button container*/
         div {
-            @apply items-center lg:inline-flex lg:gap-8;
+            @apply items-center inline-flex justify-between
+            lg:flex lg:gap-8;
             ul {
-                @apply hidden lg:flex lg:divide-x-2 lg:divide-black lg:divide-solid;
-                li button {
+                @apply hidden lg:flex lg:divide-x-2 lg:divide-neutral-400 lg:divide-solid;
+                li {
                     @apply px-4 cursor-pointer hover:text-deep-forest-700 hover:underline underline-offset-4;
                 }
             }
-            #donate-button {
-                @apply hidden sm:block float-right bg-deep-forest-600 px-4 pt-1 pb-1.5 text-white rounded-lg
+            #menu-button {
+                @apply z-1 p-2 lg:hidden font-bold xs:mr-4
+                shadow-lg shadow-deep-forest-500/30 bg-deep-forest-600
+                hover:bg-deep-forest-700;
+                svg {
+                    @apply size-6 invert;
+                }
+            }
+            #membership-button {
+                @apply h-10 text-nowrap bg-deep-forest-600 px-4 pt-1 pb-1.5 text-white
                 shadow-lg shadow-deep-forest-500/30 font-bold
+                hidden xs:block
                 hover:shadow-deep-forest-500/80 hover:bg-deep-forest-700;
             }
         }
     }
     section {
-        @apply h-256;
+        @apply h-256 bg-neutral-100;
     }
 }
 
