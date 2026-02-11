@@ -12,12 +12,9 @@ export default defineConfig(({ command }) => {
         // Add other common config here (like plugins)
     }
 
-    if (command === 'serve') {
+    if (command !== 'serve') {
         // In development, we want the site at the root (localhost:5173/)
-        config.base = '/website'
-    } else {
-        // In production (build), we need the repo name for GitHub Pages
-        config.base = '/my-uni-project/'
+        config.base = '/EssexGardensTrust/'
     }
 
     return config
