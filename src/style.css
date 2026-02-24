@@ -1,19 +1,54 @@
-@import "tailwindcss";
+@font-face {
+    font-family: Montserrat;
+    src: url('./Montserrat.ttf');
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-@theme {
-    --shadow-lg: 1px 3px 24px 0px;
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 16px clamp(8px, 8vw, 256px);
+    height: 64px;
+}
 
-    --breakpoint-xs: 32rem;
+nav a img {
+    height: 2.5rem;
+}
 
-    --color-deep-forest-50: oklch(98.2% 0.014 155.6);
-    --color-deep-forest-100: oklch(95.5% 0.030 159.1);
-    --color-deep-forest-200: oklch(90.5% 0.053 160.6);
-    --color-deep-forest-300: oklch(83.7% 0.088 162.0);
-    --color-deep-forest-400: oklch(75.0% 0.118 162.8);
-    --color-deep-forest-500: oklch(65.7% 0.121 163.2);
-    --color-deep-forest-600: oklch(55.9% 0.104 163.6);
-    --color-deep-forest-700: oklch(47.8% 0.085 164.9);
-    --color-deep-forest-800: oklch(41.1% 0.067 167.2);
-    --color-deep-forest-900: oklch(36.2% 0.056 168.4);
-    --color-deep-forest-950: oklch(25.3% 0.036 170.8);
+#menu {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#menu ul {
+    display: inline-flex;
+    list-style: none;
+    gap: 1rem;
+    padding: 0;
+}
+
+#menu ul li {
+    text-wrap: nowrap;
+}
+
+#contribute-button {
+    border: none;
+}
+
+#menu ul li, #contribute-button {
+    padding: 8px 8px;
+    font-size: 1rem;
+    font-family: Montserrat, serif;
+    font-weight: bold;
+}
+
+#menu-button {
+    display: none;
+
 }
