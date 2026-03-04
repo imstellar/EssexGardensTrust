@@ -1,54 +1,92 @@
 @font-face {
-    font-family: Montserrat;
-    src: url('./Montserrat.ttf');
+	font-family: 'Mulish';
+	src: url('./fonts/Mulish.ttf');
 }
+
+:root {
+	--color-primary: #344E41;
+	--on-color-primary: #DAD7CD;
+	--color-secondary: #A3B18A;
+	--on-color-secondary: #000000;
+}
+
+button {
+	border: none;
+	padding: 0.5rem 0.75rem;
+	font-weight: 700;
+	font-size: 1rem;
+	border-radius: 0.75rem;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background-color: #c1c1c1;
 }
+
+* {font-family: 'Mulish', sans-serif;}
 
 nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 16px clamp(8px, 8vw, 256px);
-    height: 64px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: transparent;
+	margin: 2rem 3rem 0 3rem;
+	& a {
+		display: inline-flex;
+		align-items: center;
+		text-decoration: none;
+		& img {width: 1.2rem;}
+		& header {
+			color: var(--color-primary);
+			line-height: 1.5rem;
+			font-weight: bold;
+			font-size: 2rem;
+			padding: 0 0.5rem;
+		}
+	}
+	& menu {
+		display: flex;
+		align-items: center;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		gap: 2rem;
+		& li {
+			font-weight: 700;
+			& a {
+				font-size: 1rem;
+				color: black;
+				& button {
+					background: var(--color-primary);
+					color: var(--on-color-primary);
+				}
+				& button:hover {
+					box-shadow: 0 0 8px 4px white;
+				}
+			}
+		}
+	}
 }
 
-nav a img {
-    height: 2.5rem;
+
+
+@media all and (min-width: 1600px) {
+
 }
 
-#menu {
-    display: inline-flex;
-    align-items: center;
-    gap: 1rem;
+@media all and (max-width: 1600px) {
+
 }
 
-#menu ul {
-    display: inline-flex;
-    list-style: none;
-    gap: 1rem;
-    padding: 0;
+@media all and (max-width: 1280px) {
+
 }
 
-#menu ul li {
-    text-wrap: nowrap;
+@media all and (max-width: 768px) {
+
 }
 
-#contribute-button {
-    border: none;
-}
-
-#menu ul li, #contribute-button {
-    padding: 8px 8px;
-    font-size: 1rem;
-    font-family: Montserrat, serif;
-    font-weight: bold;
-}
-
-#menu-button {
-    display: none;
+@media all and (max-width: 600px) {
 
 }
