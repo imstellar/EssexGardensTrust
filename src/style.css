@@ -4,10 +4,16 @@
 }
 
 :root {
-	--color-primary: #344E41;
-	--on-color-primary: #DAD7CD;
-	--color-secondary: #A3B18A;
-	--on-color-secondary: #000000;
+	--background: #EEEEEE;
+
+	--color-primary: #29451a;
+	--on-primary: #bdcfb4;
+
+	--color-secondary: #1a2a48;
+	--on-secondary: #b6c2d6;
+
+	--unavailable: #b7c8cb;
+	--on-unavailable: #1f2a2e;
 }
 
 button {
@@ -16,12 +22,32 @@ button {
 	font-weight: 700;
 	font-size: 1rem;
 	border-radius: 0.75rem;
+	transition: box-shadow 0.25s ease-in-out;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.btn-primary {
+	background: var(--color-primary);
+	color: var(--on-primary);
+	&:hover {
+		box-shadow: 0 0.25rem 0.75rem 0.25rem var(--on-primary);
+	}
+}
+
+.btn-secondary {
+	background: var(--color-secondary);
+	color: var(--on-secondary);
+	&:hover {
+		box-shadow: 0 0.25rem 0.75rem 0.25rem var(--on-secondary);
+	}
 }
 
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #c1c1c1;
+	background-color: var(--background);
 }
 
 * {font-family: 'Mulish', sans-serif;}
@@ -57,14 +83,11 @@ nav {
 			& a {
 				font-size: 1rem;
 				color: black;
-				& button {
-					background: var(--color-primary);
-					color: var(--on-color-primary);
-				}
-				& button:hover {
-					box-shadow: 0 0 8px 4px white;
-				}
 			}
+		}
+		& li:hover, & li a:hover {
+			cursor: pointer;
+			text-decoration: underline;
 		}
 	}
 }

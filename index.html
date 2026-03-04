@@ -16,18 +16,15 @@
         <img src="src/leaf-inverted.svg" alt="leaf, part of the logo">
       </a>
       <menu>
-        <li><a href="">What we do &#9660;</a></li>
+        <li onMouseEnter="showDropdown()" onMouseDown="showDropdown()" >What we do &#9660;</li>
         <li><a href="">Events</a></li>
         <li><a href="">News</a></li>
         <li><a href="">Publications</a></li>
         <li><a href="">Our Gardens</a></li>
         <li><a href="">Contact</a></li>
-        <li>
-          <a href="">
-            <button>Contribute</button>
-          </a>
-        </li>
+        <li><button class="btn-primary" onclick="showContributeOverlay()" >Contribute</button></li>
       </menu>
     </nav>
+  <button class="btn-secondary">Template Button</button>
   </body>
 </html>

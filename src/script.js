@@ -1,3 +1,7 @@
 function showDropdown() {
-    document.getElementById("menu").classList.toggle("show");
+    // document.getElementById("menu").classList.toggle("show");
+}
+
+function showContributeOverlay() {
+
 }
