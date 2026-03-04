@@ -26,3 +26,4 @@ dist-ssr
 # Syncthing
 ~syncthing*
 *.af~lock~
+*.tmp
