@@ -53,11 +53,12 @@ body {
 * {font-family: 'Mulish', sans-serif;}
 
 nav {
+	margin: 2rem 2rem 0 2rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	background-color: transparent;
-	margin: 2rem 3rem 0 3rem;
+	text-wrap: nowrap;
 	& a {
 		display: inline-flex;
 		align-items: center;
@@ -65,14 +66,13 @@ nav {
 		& img {width: 1.2rem;}
 		& header {
 			color: var(--color-primary);
-			line-height: 1.5rem;
+			line-height: 1.25rem;
 			font-weight: bold;
-			font-size: 2rem;
+			font-size: 1.5rem;
 			padding: 0 0.5rem;
 		}
 	}
 	& menu {
-		display: flex;
 		align-items: center;
 		list-style: none;
 		padding: 0;
@@ -85,31 +85,67 @@ nav {
 				color: black;
 			}
 		}
-		& li:hover, & li a:hover {
-			cursor: pointer;
-			text-decoration: underline;
-		}
+		& li a:hover {text-decoration: underline;}
+		& li:hover {cursor: pointer;}
+	}
+	& .nav-button {
+		display: none;
+		height: 2rem;
+		width: 2rem;
 	}
 }
 
 
 
 @media all and (min-width: 1600px) {
-
+	nav {
+		& menu {
+			display: flex;
+		}
+	}
 }
 
 @media all and (max-width: 1600px) {
-
+	nav {
+		& menu {
+			display: flex;
+		}
+	}
 }
 
 @media all and (max-width: 1280px) {
-
+	nav {
+		& menu {
+			display: none;
+		}
+		& .nav-button {
+			display: block;
+		}
+	}
 }
 
 @media all and (max-width: 768px) {
-
+	nav {
+		& menu {
+			display: none;
+		}
+		& .nav-button {
+			display: block;
+		}
+	}
 }
 
 @media all and (max-width: 600px) {
-
+	nav {
+		gap: 1rem;
+		& menu {
+			display: none;
+		}
+		& .nav-button {
+			display: block;
+		}
+		& a img {
+			display: none;
+		}
+	}
 }
